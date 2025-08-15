@@ -14,21 +14,28 @@ module example_and_gate
     assign and_temp   = input_1 & input_2;
     assign and_result = and_temp;
 
-endmodule // example_and_gate
+endmodule
 
-// Combinational Lgic Example
+// Combinational Logic Example
+
 always @ (input_1 or input_2)
     begin
         and_gate = input_1 & input_2;
     end
 
 // Sequential Logic Example
+//      - Sequential meaning circuit is dependent on waveform
+//      - This waveform is referred to as the clock
+
 always @ (posedge i_clock)
     begin  
         and_gate <= input_1 & input_2;
     end
 
 // Flip-Flop Chain Example
+//      - The signal goes across the flip flops accordinging the waveform signal
+//      - Flip flops send input signal to output when it receives waveform signal
+
 reg test1 = 1'b1;
 reg test2 = 1'b0;
 reg test3 = 1'b0;

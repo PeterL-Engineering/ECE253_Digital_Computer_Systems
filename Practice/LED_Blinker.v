@@ -46,7 +46,7 @@ begin
 
     always @ (posedge i_clock)
         begin
-            if (r_CNT_100HZ == c_CNT_100HZ-1) // -1 sine the counter starts at 0
+            if (r_CNT_100HZ == c_CNT_100HZ-1) // -1 since the counter starts at 0
                 begin
                     r_TOGGLE_100HZ <= !r_TOGGLE_100HZ;
                     r_CNT_100HZ    <= 0;
@@ -57,7 +57,7 @@ begin
     
     always @ (posedge i_clock)
         begin
-            if (r_CNT_50HZ == c_CNT_100HZ-1) // -1 sine the counter starts at 0
+            if (r_CNT_50HZ == c_CNT_100HZ-1) // -1 since the counter starts at 0
                 begin
                     r_TOGGLE_50HZ <= !r_TOGGLE_50HZ;
                     r_CNT_50HZ    <= 0;
@@ -68,7 +68,7 @@ begin
 
     always @ (posedge i_clock)
         begin
-            if (r_CNT_10HZ == c_CNT_100HZ-1) // -1 sine the counter starts at 0
+            if (r_CNT_10HZ == c_CNT_100HZ-1) // -1 since the counter starts at 0
                 begin
                     r_TOGGLE_10HZ <= !r_TOGGLE_10HZ;
                     r_CNT_10HZ    <= 0;
@@ -79,7 +79,7 @@ begin
 
     always @ (posedge i_clock)
         begin
-            if (r_CNT_1HZ == c_CNT_100HZ-1) // -1 sine the counter starts at 0
+            if (r_CNT_1HZ == c_CNT_100HZ-1) // -1 since the counter starts at 0
                 begin
                     r_TOGGLE_1HZ <= !r_TOGGLE_1HZ;
                     r_CNT_1HZ    <= 0;
@@ -92,7 +92,23 @@ begin
     always @ (*)
     begin
         case ({i_switch_1, i_switch_2}) // Concatentation Operator { }
-            
+            2'b11 : r_LED_SELECT <= r_TOGGLE_1HZ;
+            2'b10 : r_LED_SELECT <= r_TOGGLE_10HZ;
+            2'b01 : r_LED_SELECT <= r_TOGGLE_50HZ;
+            2'b00 : r_LED_SELECT <= r_TOGGLE_100HZ;
+        endcase
+    end
 
+    assign o_led_drive = r_LED_SELECT & i_enable;
+
+    // Alternative way to design multiplexer (same as above):
+    // More compact, but harder to read, especially to those new to Verilog
+
+    // assign w_LED_SELECT = i_switch_1 ? (i_switch_2 ? r_TOGGLE_1HZ : r_TOGGLE_10HZ) :
+    //                                    (i_switch_2 ? r_TOGGLE_50HZ: r_TOGGLE_100HZ);
+
+    // assign o_led_drive = w_LED_SELECT & i_enable;
+            
 end
+
 endmodule

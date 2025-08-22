@@ -14,7 +14,7 @@ module carry_lookahead_adder
     // Create the Full Adders
     genvar              ii;
     generate
-        for (ii 0; ii<WIDTH; ii ii+1)
+        for (ii 0; ii<WIDTH; ii = ii+1)
             begin
                 full_adder full_adder_inst
                     (
@@ -30,18 +30,18 @@ module carry_lookahead_adder
     // Create the Generate (G) Terms: G_i = A_i * B_i
     // Create the Propagate Terms: P_i = A_i + B_i
     // Create the Carry Terms:
-    genvar          jj;
+    genvar jj;
     generate
-        for (jj 0; jj<WIDTH; jj jj+1)
+        for (jj = 0; jj < WIDTH; jj = jj + 1)
             begin
-                assign w_G[jj]      = i_add1[jj] & i_add2[jj];
-                assign w_P[jj]      = i_add1[jj] | i_add2[jj];
-                assign w_C[jj+1]    = w_G[jj] | (wP[jj] & w_C[jj]);
+                assign w_G[jj]   = i_add1[jj] & i_add2[jj];
+                assign w_P[jj]   = i_add1[jj] | i_add2[jj];
+                assign w_C[jj+1] = w_G[jj] | (w_P[jj] & w_C[jj]);
             end
     endgenerate
 
-    assign w_C[0] = 1'b0 // no carry input on first adder
+    assign w_C[0] = 1'b0; // no carry input on first adder
 
-    assign o_result = {wC[WIDTH], w_SUM};   // Verilog Concatenation
+    assign o_result = {w_C[WIDTH], w_SUM};   // Verilog Concatenation
 
 endmodule // carry_lookahead_adder

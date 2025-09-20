@@ -1,0 +1,171 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Peter/Documents/GitHub/ECE_253/Labs/Lab_2/Part_2/Mux2to1
+vand_gate
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1758376856
+!i10b 1
+!s100 >:[4E]HGNoCza]efdDLa80
+Ib=?C3Rf6I4kRz4DSICHcW2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 Mux2to1_sv_unit
+S1
+R0
+Z5 w1758206115
+Z6 8v7408_Quad_2_Input_AND.sv
+Z7 Fv7408_Quad_2_Input_AND.sv
+L0 47
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1758376856.000000
+Z10 !s107 v7432_Quad_2_Input_OR.sv|v7408_Quad_2_Input_AND.sv|v7404_Hex_INVERTER.sv|Mux2to1.sv|
+Z11 !s90 -reportprogress|300|Mux2to1.sv|
+!i113 1
+Z12 tCvgOpt 0
+vinverter
+R1
+R2
+!i10b 1
+!s100 gQO`PCd9?MDSjYXPPgGb?0
+IAW=dnCBJ2ea72V1EbRIEI3
+R3
+R4
+S1
+R0
+R5
+Z13 8v7404_Hex_INVERTER.sv
+Z14 Fv7404_Hex_INVERTER.sv
+L0 45
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vmux2to1
+R1
+R2
+!i10b 1
+!s100 595PE_PH9VLmNm:aJCEmV2
+I^D5=I^ga@jk@54>N=ead83
+R3
+R4
+S1
+R0
+R5
+8Mux2to1.sv
+FMux2to1.sv
+L0 5
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vor_gate
+R1
+R2
+!i10b 1
+!s100 hFiMO:[OQaS;7K[F]e31T0
+IAAoMnFBZ]_P[mYF2JhihM3
+R3
+R4
+S1
+R0
+R5
+Z15 8v7432_Quad_2_Input_OR.sv
+Z16 Fv7432_Quad_2_Input_OR.sv
+L0 46
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vv7404
+R1
+R2
+!i10b 1
+!s100 93l`g`dUm6hDI@KeWcgj@0
+IY2ZhYoF;@Dh<PJ6^diCea0
+R3
+R4
+S1
+R0
+R5
+R13
+R14
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vv7408
+R1
+R2
+!i10b 1
+!s100 Ll6nA^96m@55ENoA^4UZa3
+I3H^FKCSE_C9hc>j870mPI0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vv7432
+R1
+R2
+!i10b 1
+!s100 `UB1O6AR@R:FOTkUK:N1[1
+IC3hg_gK]05^PX<U5BkPAP0
+R3
+R4
+S1
+R0
+R5
+R15
+R16
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12

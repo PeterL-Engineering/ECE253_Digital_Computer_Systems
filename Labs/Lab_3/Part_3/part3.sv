@@ -19,7 +19,7 @@ module part3(
     input logic Clock,
     input logic Reset_b,
     input logic [3:0] Data,
-    input logic [1:0] Function,
+    input logic [2:0] Function,
     output logic [7:0] ALU_reg_out
 );
 

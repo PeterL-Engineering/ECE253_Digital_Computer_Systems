@@ -32,7 +32,7 @@ module part1(
         .a(a[0]),
         .b(b[0]),
         .c_in(c_in),        // External carry-in
-        .c_out(CARRY_1),
+        .c_out(c_out[0]),
         .s(s[0])
     );
 
@@ -40,8 +40,8 @@ module part1(
     FA u1 (
         .a(a[1]),
         .b(b[1]),
-        .c_in(CARRY_1),     // Carry from previous stage
-        .c_out(CARRY_2),
+        .c_in(c_out[0]),     // Carry from previous stage
+        .c_out(c_out[1]),
         .s(s[1])
     );
 
@@ -49,8 +49,8 @@ module part1(
     FA u2 (
         .a(a[2]),
         .b(b[2]),
-        .c_in(CARRY_2),     // Carry from previous stage
-        .c_out(CARRY_3),
+        .c_in(c_out[1]),     // Carry from previous stage
+        .c_out(c_out[2]),
         .s(s[2])
     );
 
@@ -58,8 +58,8 @@ module part1(
     FA u3 (
         .a(a[3]),
         .b(b[3]),
-        .c_in(CARRY_3),     // Carry from previous stage
-        .c_out(c_out),      // Final carry-out
+        .c_in(c_out[2]),     // Carry from previous stage
+        .c_out(c_out[3]),      // Final carry-out
         .s(s[3])
     );
 

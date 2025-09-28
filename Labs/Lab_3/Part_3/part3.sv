@@ -31,7 +31,7 @@ module part3(
     begin
         case(Function)
             2'b00: ALUout = {4'b0000, Data} + REGISTER_OUTPUT;  // Extend Data to 8 bits
-            2'b01: ALUout = {4'b0000, Data} * REGISTER_OUTPUT;  // Multiplication
+            2'b01: ALUout = Data * REGISTER_OUTPUT[3:0];   // Multiplication
             2'b10: ALUout = REGISTER_OUTPUT << Data;  // Left shift by Data bits
             2'b11: ALUout = {4'b0000, Data};  // Extend Data to 8 bits
             default: ALUout = 8'b00000000;            

@@ -7,7 +7,7 @@ module D_flip_flop(
 
     always_ff @(posedge clk)
     begin
-        if (!reset_b) 
+        if (reset_b) 
             q <= 8'b00000000;
         else 
             q <= d;
